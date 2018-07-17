@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin test01($size, $color){
+    width: $size;
+    background: $color;
+}
+.me{
+    @include test01(50px, red)
+}
+@mixin transform-tilt() {
+    $tilt: rotate(15deg);
+
+    -webkit-transform: $tilt; /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+        -ms-transform: $tilt; /* IE 9 */
+            transform: $tilt; /* IE 10, Fx 16+, Op 12.1+ */
+  }
+
+ 
+
+  .red-color{
+      color:  red;
+  }
+  .red-extend{
+      @extend .red-color;
+      background: green;
+      color: white
+  }
+  $awesome-blue: #2196F3;
+
+  a {
+    padding: 10 15px;
+    background-color: $awesome-blue;
+  }
+
+  a:hover {
+    background-color: darken($awesome-blue,10%);
+  }
